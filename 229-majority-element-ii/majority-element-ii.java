@@ -5,8 +5,10 @@ class Solution {
 
         for (int num : nums){
             map.put(num, map.getOrDefault(num,0)+1);
-            if (map.get(num) > (nums.length/3) && !list.contains(num)){
-                list.add(num);
+        }
+        for (int key : map.keySet()){
+            if (map.get(key) > nums.length/3){
+                list.add(key);
             }
         }
         return list;        
